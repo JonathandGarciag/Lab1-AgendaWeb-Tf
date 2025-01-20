@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contactos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body style="background-image: url('/image/FondoTf.png'); background-repeat: no-repeat; background-size: cover; background-position: center; width: 100%; height: 100vh;  margin: 0;">
+    
     <nav class="navbar" style="padding-left: 10px; padding-right: 10px; background-color: #5d2a8d; color: white;">
-        <div class="container-fluid">
-            <h1>CONTACTOS</h1>
-            <a class="navbar-brand" href="/login/indexLogin.html" style="margin-left: 0;">
-                <img src="/image/LogoATelefonico.png" alt="logo" class="img-fluid" style="max-width: 90px;">
+        <div class="container-fluid text-center">
+            <h2>CONTACTOS</h2>
+            <a class="navbar-brand" href="/perfiles/perfil.html" style="margin-left: 0;">
+                <img src="/image/LogoATelefonico.png" alt="logo" class="img-fluid" style="max-width: 75px;">
+                <p style="color: white; margin-top: 5px;">Perfil</p>
             </a>
         </div>
     </nav>
@@ -30,46 +32,63 @@
             <tbody>
                 <tr class="table-active">
                     <th scope="row">1</th>
-                    <td> <a href="" style="color: inherit; text-decoration: none;">Josue Hernandez</a></td>
+                    <td> 
+                        <a href="#" class="open-modal" data-modal-url="../detalleContactos/detalleContacto.html" style="color: #6c9bc0; text-decoration: none;">Josue Hernandez</a>
+                    </td>
                     <td>+502 1654 7832</td>
                     <td>Calle 1, Zona 12, Ciudad de Guatemala</td>
                     <td>Johernan78@gmail.com</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
-                    <td> <a href="" style="color: inherit; text-decoration: none;">Christian Reyes</a></td>
+                    <td> 
+                        <a href="#" class="open-modal2" data-modal-url="../detalleContactos/detalleContacto2.html" style="color: #6c9bc0; text-decoration: none;">Christian Reyes</a>
+                    </td>
                     <td>+502 4688 4987</td>
                     <td>Calle 2, Zona 1, Chimaltenango</td>
                     <td>ChrisReyes98@gmail.com</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td> <a href="" style="color: inherit; text-decoration: none;">Esteban Rodolfo</a></td>
+                    <td> 
+                        <a href="#" class="open-modal3" data-modal-url="../detalleContactos/detalleContacto3.html" style="color: #6c9bc0; text-decoration: none;">Esteban Rodolfo</a>
+                    </td>
                     <td>+502 4378 2136</td>
                     <td>Calle 3, Zona 7, Escuintla</td>
                     <td>Rotaban54@gmail.com</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
-                    <td> <a href="" style="color: inherit; text-decoration: none;">Carlos Mendez</a></td>
+                    <td> 
+                        <a href="#" class="open-modal4" data-modal-url="../detalleContactos/detalleContacto4.html" style="color: #6c9bc0; text-decoration: none;">Carlos Mendez</a>
+                    </td>
                     <td>+502 4687 4698</td>
                     <td>Calle 4, Zona 10, Ciudad de Guatemala</td>
                     <td>Mcarlos56@gmail.com</td>
                 </tr>
                 <tr>
                     <th scope="row">5</th>
-                    <td> <a href="" style="color: inherit; text-decoration: none;">Joel Perez</a></td>
+                    <td> 
+                        <a href="#" class="open-modal5" data-modal-url="../detalleContactos/detalleContacto5.html" style="color: #6c9bc0; text-decoration: none;">Joel Perez</a>
+                    </td>
                     <td>+502 3215 5487</td>
                     <td>Calle 5, Zona 11, Jutiapa</td>
                     <td>Jolrez62@gmail.com</td>
                 </tr>
               </tbody>
         </table>
-    </div>
+    </div>  
+
     <div class="container d-flex justify-content-end">
-        <button class="btn btn-primary me-md-2 " type="button" onclick="location.href='/nuevoContacto/agregarCt.html'">Agregar</button>
-        <button class="btn btn-primary" type="button" onclick="location.href='/contactos/contactos.html';">Recargar</button>
+        <button class="btn me-md-2" type="button" onclick="location.href='/nuevoContacto/agregarContacto.html'" style="background-color: #0c1021; color: white;">Agregar Contacto</button>
+        <button class="btn me-md-2" type="button" onclick="location.href='/Favoritos/favorito.html';" style="background-color: #0c1021; color: white;">Favoritos</button>
+        <button class="btn me-md-2" type="button" onclick="location.href='/contactos/contactos.html';" style="background-color: #0c1021; color: white;">Recargar</button>
     </div>
+
+    <div id="modalContainer"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="contacto.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script> 
