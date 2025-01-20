@@ -30,25 +30,47 @@
             <img src="/image/Montañas.png.jpg" class="card-img-top" alt="image">
             <div class="card-body">
                 <h3 style="color: white;">Login</h3>
-                <form style="color: white; text-align: left;">
+                <form style="color: white; text-align: left;" id="loginForm">
                     <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label" style="color: white;">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="background-color: #21313e; color: azure;">
-                      <div id="emailHelp" class="form-text" style="color: white;">Nunca compartiremos su correo electrónico con nadie más.</div>
+                        <label for="exampleEmail1" class="form-label" style="color: white;">Email address</label>
+                        <input type="email" class="form-control" id="exampleEmail1" aria-describedby="emailHelp" style="background-color: #21313e; color: azure;">
+                        <div id="emailHelp" class="form-text" style="color: white;">Nunca compartiremos su correo electrónico con nadie más.</div>
                     </div>
-                    <div class="mb-3">  
-                      <label for="exampleInputPassword1" class="form-label" style="color: white;">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" style="background-color: #21313e; color: azure;    ">
+                    <div class="mb-3">
+                        <label for="password1" class="form-label" style="color: white;">Password</label>
+                        <input type="password" class="form-control" id="password1" style="background-color: #21313e; color: azure;">
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1" style="background-color: #21313e;">
-                      <label class="form-check-label" for="exampleCheck1" style="color: white;">Check me out</label>
-                    </div>
-                    <button onclick="location.href='/contactos/contactos.html';" type="button" class="btn btn-primary" style="background-color: #21d0fc;">Submit</button>
-                </form> 
+                    <button type="button" class="btn btn-primary" style="background-color: #21d0fc;" id="loginBtn">Iniciar</button>
+                </form>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            const email = document.getElementById('exampleEmail1').value;
+            const password = document.getElementById('password1').value;
+    
+            if (!validarEmail(email)) {
+                alert('Ingresa un email válido (debe contener un @ y un punto después del @).');
+                return; 
+            }
+    
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+    
+            location.href = '/contactos/contactos.html';
+        });
+    
+        function validarEmail(email) {
+            const emailRegex = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+            const arrobaCount = (email.match(/@/g) || []).length; 
+    
+            return emailRegex.test(email) && arrobaCount === 1;
+        }
+    </script>
+
+    <br>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script> 
